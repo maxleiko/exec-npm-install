@@ -1,9 +1,9 @@
-# npm-install
+# exec-npm-install
 Calls npm install in a child_process to prevent npm to take too much memory
 
 ### Usage
 ```js
-var npmInstall = require('npm-install');
+var execNpmInstall = require('exec-npm-install');
 
 var options = {
   // modules to install
@@ -16,7 +16,7 @@ var options = {
   prefix: '/path/to/somewhere'
 };
 
-npmInstall(options, function (err) {
+execNpmInstall(options, function (err) {
   if (err) {
     console.log('Error: '+err.message);
   } else {
