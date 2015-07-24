@@ -1,0 +1,23 @@
+{
+  "name": "npm-install",
+  "version": "1.0.0",
+  "description": "Calls npm install in a child_process to prevent npm to take too much memory",
+  "main": "npm-install.js",
+  "dependencies": {
+    "async": "^1.4.0",
+    "npm": "^2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "npm",
+    "install",
+    "api",
+    "child",
+    "process"
+  ],
+  "author": "Maxime Tricoire <max.tricoire@gmail.com>",
+  "license": "MIT"
+}
