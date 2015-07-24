@@ -1,4 +1,4 @@
-var npmInstall = require('../npm-install');
+var npmInstall = require('../exec-npm-install');
 
 describe('Dummy test', function () {
     this.timeout(10000);

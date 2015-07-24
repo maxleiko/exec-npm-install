@@ -1,8 +1,8 @@
 {
-  "name": "npm-install",
+  "name": "exec-npm-install",
   "version": "1.0.0",
   "description": "Calls npm install in a child_process to prevent npm to take too much memory",
-  "main": "npm-install.js",
+  "main": "exec-npm-install.js",
   "dependencies": {
     "async": "^1.4.0",
     "npm": "^2"
@@ -25,10 +25,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maxleiko/npm-install.git"
+    "url": "git+https://github.com/maxleiko/exec-npm-install.git"
   },
   "bugs": {
-    "url": "https://github.com/maxleiko/npm-install/issues"
+    "url": "https://github.com/maxleiko/exec-npm-install/issues"
   },
-  "homepage": "https://github.com/maxleiko/npm-install#readme"
+  "homepage": "https://github.com/maxleiko/exec-npm-install#readme"
 }

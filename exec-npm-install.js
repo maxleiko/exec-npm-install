@@ -8,7 +8,7 @@ var exec    = require('child_process').exec,
  * @param options
  * @param callback
  */
-function npmInstall(options, callback) {
+function execNpmInstall(options, callback) {
     var cmd = 'node node_modules/npm/cli.js install';
     var modules = [];
 
@@ -49,4 +49,4 @@ function npmInstall(options, callback) {
         });
 }
 
-module.exports = npmInstall;
+module.exports = execNpmInstall;
