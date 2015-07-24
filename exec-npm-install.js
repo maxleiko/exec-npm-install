@@ -9,17 +9,17 @@ var exec    = require('child_process').exec,
  * @param callback
  */
 function execNpmInstall(options, callback) {
-    var cmd = 'node node_modules/npm/cli.js install';
+    var cmd = 'node '+path.resolve(__dirname, 'node_modules/npm/cli.js')+' install';
     var modules = [];
 
     async.each(
         options.modules,
         function (module, done) {
-            exists(module, options.prefix, function (err, exist) {
+            exists(module, options.prefix, function (err, exists) {
                 if (err) {
                     done(err);
                 } else {
-                    if (!exist) {
+                    if (!exists) {
                         modules.push(module);
                     }
                     done();
@@ -37,10 +37,6 @@ function execNpmInstall(options, callback) {
                         cmd += ' --prefix=' + path.resolve(options.prefix)
                     }
 
-                    console.log('=============');
-                    console.log(modules);
-                    console.log(options.prefix);
-                    console.log('=============');
                     exec(cmd, callback);
                 } else {
                     callback();
