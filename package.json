@@ -19,5 +19,16 @@
     "process"
   ],
   "author": "Maxime Tricoire <max.tricoire@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxleiko/npm-install.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maxleiko/npm-install/issues"
+  },
+  "homepage": "https://github.com/maxleiko/npm-install#readme"
 }
