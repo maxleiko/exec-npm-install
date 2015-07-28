@@ -9,7 +9,7 @@ var exec    = require('child_process').exec,
  * @param callback
  */
 function execNpmInstall(options, callback) {
-    var cmd = 'node '+path.resolve(__dirname, 'node_modules/npm/cli.js')+' install';
+    var cmd = 'npm install';
     var modules = [];
 
     async.each(

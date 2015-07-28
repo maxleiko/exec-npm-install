@@ -4,8 +4,7 @@
   "description": "Calls npm install in a child_process to prevent npm to take too much memory",
   "main": "exec-npm-install.js",
   "dependencies": {
-    "async": "^1.4.0",
-    "npm": "^2"
+    "async": "^1.4.0"
   },
   "devDependencies": {},
   "scripts": {
