@@ -1,10 +1,11 @@
 {
   "name": "exec-npm-install",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Calls npm install in a child_process to prevent npm to take too much memory",
   "main": "exec-npm-install.js",
   "dependencies": {
-    "async": "^1.4.0"
+    "async": "^1.4.0",
+    "latest-version": "^1.0.1"
   },
   "devDependencies": {},
   "scripts": {
