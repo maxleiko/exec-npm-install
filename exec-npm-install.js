@@ -1,4 +1,4 @@
-var exec    = require('child_process').exec,
+var spawn   = require('child_process').spawn,
     path    = require('path'),
     async   = require('async'),
     exists  = require('./lib/exists');
@@ -9,8 +9,8 @@ var exec    = require('child_process').exec,
  * @param callback
  */
 function execNpmInstall(options, callback) {
-    var cmd = 'npm install';
     var modules = [];
+    var prefix = '';
 
     async.each(
         options.modules,
@@ -31,13 +31,21 @@ function execNpmInstall(options, callback) {
                 callback(err);
             } else {
                 if (modules.length > 0) {
-                    cmd += ' ' + modules.join(' ');
-
                     if (options.prefix) {
-                        cmd += ' --prefix=' + path.resolve(options.prefix)
+                        prefix = '--prefix=' + path.resolve(options.prefix)+'';
                     }
 
-                    exec(cmd, callback);
+                    var args = ['install'].concat(modules).concat(prefix);
+                    var npm = spawn('npm', args, { env: process.env, stdio: 'inherit', detached: true });
+                    npm.on('close', function (code) {
+                      if (code !== 0) {
+                        //console.log('FAIL: npm '+args.join(' '));
+                        callback(new Error('npm '+args.join(' ')));
+                      } else {
+                        callback();
+                        npm.unref();
+                      }
+                    });
                 } else {
                     callback();
                 }
